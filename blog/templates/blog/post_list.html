@@ -1,16 +1,80 @@
 <html>
   <head>
     <title>Django Girls blog</title>
+    <!-- CSS only -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Sora", sans-serif;
+      }
+      body {
+        background-color: #f0f0f0;
+      }
+      .heading {
+        position: relative;
+        text-align: center;
+        font-size: 50px;
+      }
+      .blog-container {
+        margin-left: 10px;
+        margin-right: 10px;
+        box-sizing: border-box;
+      }
+      .blog-box {
+        border-radius: 10px;
+        border: 1px solid #000;
+        padding: 5px;
+      }
+      .header {
+        background-color: #000;
+        color: #fff;
+        font-size: 20px;
+      }
+      .published-date {
+        font-weight: 800;
+        text-decoration: italic;
+        font-size: 16px;
+      }
+      .post-heading {
+        font-size: 25px;
+      }
+    </style>
   </head>
   <body>
-    <div>
-      <h1><a href="/">Django Girls Blog</a></h1>
+    <div class="header">
+      <h1 class="heading">My Django</h1>
     </div>
-    <div>
+    <div class="blog-container">
       {%for post in posts %}
-      <h1>{{ post.title }}</h1>
-      <p>Published on: {{ post.published_date }}</p>
-      <p>{{ post.text | linebreaksbr }}</p>
+      <h1 class="post-heading">{{ post.title }}</h1>
+      <p class="published-date">Published on: {{ post.published_date }}</p>
+      <p class="blog-box">{{ post.text | linebreaksbr }}</p>
       {% endfor %}
     </div>
   </body>
